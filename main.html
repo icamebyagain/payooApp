@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- styles -->
+    <style>
+        /* .display {
+        max-width:32rem ;
+        margin: 0 auto;
+    } */
+        .greyB {
+            color: #080808b3;
+            font-weight: 600;
+        }
+    </style>
+
+
+</head>
+
+
+
+
+
+<body class="bg-[#f4f5f7] h-[100vh]  ">
+
+
+    <div class="max-w-lg mx-auto bg-white rounded-b-xl">
+
+        <!-- nav section  -->
+        <section class="flex justify-between  border-b border-gray-300 p-5 ">
+            <div class="flex justify-between">
+                <img class="h-[45px] mr-3" src="assets/Group.png" alt="">
+                <div>
+                    <h2 class="font-bold">$ <span id="balance">4500</span> </h2>
+                    <p class="text-gray-400">Available balance</p>
+                </div>
+
+            </div>
+
+            <div>
+                <button class="border-gray-400 text-gray-400 btn btn-neutral btn-outline"><i
+                        class="text-gray-600 fa-solid fa-arrow-right-from-bracket rotate-180 "></i>LogOut</button>
+            </div>
+        </section>
+
+        <!-- welcome Section  -->
+
+        <section class=" mt-6 ">
+            <div class="p-5">
+                <h2 class="font-bold text-2xl">
+                    🔥 Welcome to Payooo!
+                </h2>
+                <p class="text-[#08080880]">
+                    Enjoy easy and convenient financial services with us. Cashout charge is low and
+                </p>
+
+
+            </div>
+            <!-- cards in welcome section -->
+            <div class="grid grid-cols-3 gap-5 p-5">
+
+
+                <div id="btn-add-money" class="text-center p-3 border border-gray-300 rounded-md ">
+                    <img class="mx-auto mb-3" src="assets/wallet1.png" alt="">
+                    <p>Add Money</p>
+                </div>
+
+                <div id="btn-cashout" class="text-center p-3 border border-gray-300 rounded-md ">
+                    <img class="mx-auto mb-3" src="assets/send1.png" alt="">
+                    <p class="greyB">Cashout</p>
+                </div>
+
+                <div id="btn-transfer" class="text-center p-3 border border-gray-300 rounded-md ">
+                    <img class="mx-auto mb-3" src="assets/money1.png" alt="">
+                    <p class="greyB">Transfer Money</p>
+                </div>
+
+                <div id="btn-bonus" class="text-center p-3 border border-gray-300 rounded-md ">
+                    <img class="mx-auto mb-3" src="assets/bonus1.png" alt="">
+                    <p class="greyB">Get Bonus</p>
+                </div>
+
+                <div id="btn-bills" class="text-center p-3 border border-gray-300 rounded-md ">
+                    <img class="mx-auto mb-3" src="assets/purse1.png" alt="">
+                    <p class="greyB">Pay Bill</p>
+                </div>
+
+                <div id="btn-Transactions" class="text-center p-3 border border-gray-300 rounded-md ">
+                    <img class="mx-auto mb-3" src="assets/transaction1.png" alt="">
+                    <p class="greyB">Transactions</p>
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- form section -->
+
+    <section id="form-addMoney" class="max-w-lg mx-auto">
+        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Add Money</h1>
+
+        <form action="" class="max-w-md mx-auto bg-white rounded-xl p-6">
+            <div>
+                <!-- select bank -->
+
+                <h2 class="greyB">Select A Bank </h2>
+                <select id="bank-name" class="select w-full h-[40px] border-gray-300 mt-2 bg-[#f4f5f7] rounded-2xl">
+                    <option disabled selected>Select Bank</option>
+                    <option>City</option>
+                    <option>Dutch Bangla</option>
+                    <option>HSBC</option>
+                </select>
+
+            </div>
+
+
+            <div>
+                <!-- Account number -->
+
+                <div class="mt-4">
+                    <label class="greyB " for="">Bank Account Number</label> <br>
+
+                    <input id="bankAccountNumber"
+                        class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                        placeholder="Enter 11 digit account number" type="text">
+                    <p id="accountError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid account number.
+                    </p>
+                </div>
+            </div>
+
+
+            <div>
+                <!-- Amount add -->
+
+                <div id="" class="mt-4">
+                    <label class="greyB" for="">Amount To Add</label> <br>
+
+                    <input id="add-amount" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                        placeholder="Add Amount to withdraw" type="text">
+                    <p id="amountError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid positive number.
+                    </p>
+
+                </div>
+            </div>
+
+
+
+            <div>
+                <!-- Pin no -->
+
+                <div class="mt-4">
+                    <label class="greyB" for="">Enter 4 digit pin Number</label> <br>
+
+                    <input id="pin-addmoney" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                        placeholder="Enter 4 digit pin number" type="text">
+                    <p id="pinError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 4-digit PIN number.
+                    </p>
+                </div>
+            </div>
+
+            <!-- button  -->
+            <button id="addMoneyBtn" class="mt-4 btn btn-active text-white rounded-2xl bg-[#0874F2] w-full ">Add
+                Money</button>
+        </form>
+    </section>
+
+    <!-- cash out form --><!-- cash out form --><!-- cash out form --><!-- cash out form -->
+
+
+    <section id="form-cashout" class="max-w-lg mx-auto hidden ">
+        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Cash Out</h1>
+
+        <form action="" class="max-w-md mx-auto bg-white rounded-xl p-6">
+
+
+            <div>
+                <!-- Agent number -->
+
+                <div class="mt-4">
+                    <label class="greyB " for="">Agent Number</label> <br>
+
+                    <input id="agent-number" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                        placeholder="Enter 11 digit number" type="text">
+
+                </div>
+            </div>
+
+
+            <div>
+                <!-- Amount withdraw -->
+
+                <div class="mt-4">
+                    <label class="greyB" for="">Amount</label> <br>
+
+                    <input id="wtd-amount" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                        placeholder="Amount to withdraw" type="text">
+                    <p id="amountError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid positive number.
+                    </p>
+
+                </div>
+            </div>
+
+
+
+            <div>
+                <!-- Pin no -->
+
+                <div class="mt-4">
+                    <label class="greyB" for="">Enter 4 digit pin Number</label> <br>
+
+                    <input id="pinWtd" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                        placeholder="Enter 4 digit pin number" type="text">
+                    <p id="pinError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 4-digit PIN number.
+                    </p>
+                </div>
+            </div>
+
+            <!-- button  -->
+            <button id="wtdBtn" class="mt-4 btn btn-active text-white rounded-2xl bg-[#0874F2] w-full ">Withdraw
+                Money</button>
+        </form>
+    </section>
+
+
+
+
+
+
+    <script>
+        document.getElementById('wtdBtn').addEventListener("click", function (e) {
+
+            e.preventDefault()
+            const agentNumber = document.getElementById('agent-number').value
+            const wtdAmount = parseInt(document.getElementById('wtd-amount').value)
+            const wtdPin = parseInt(document.getElementById('pinWtd').value)
+
+            console.log(agentNumber, wtdAmount, wtdPin)
+            const availableBalance = parseInt(document.getElementById('balance').innerText);
+
+            // Check if balance is sufficient
+            if (availableBalance < wtdAmount) {
+                alert("❌ Insufficient balance. Please add money.");
+                return;
+            }
+
+            const totalAfterWithdraw = availableBalance - wtdAmount
+            document.getElementById('balance').innerText = totalAfterWithdraw
+
+
+        })
+
+
+    </script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
