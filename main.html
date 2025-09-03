@@ -28,7 +28,7 @@
             border: 2px solid #0874F2;
             /* Blue border */
             border-radius: 0.5rem;
-            background:rgba(135, 206, 250, 0.36);
+            background: rgba(135, 206, 250, 0.36);
             /* Optional: match your card rounding */
         }
 
@@ -45,7 +45,7 @@
 
 
 
-<body class="bg-[#f4f5f7] h-[100vh]  ">
+<body class="bg-[#f4f5f7] h-full  ">
 
 
     <div class="max-w-lg mx-auto bg-white rounded-b-xl">
@@ -341,44 +341,27 @@
         </section>
 
         <!-- Transection form --><!-- Transection form --><!-- Transection form -->
+
         <section id="form-transection" class="max-w-lg mx-auto hidden form">
-            <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Transections </h1>
+            <div class="flex justify-between items-center pr-10">
+                <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Transections </h1>
+                <p class="greyB ">View All</p>
+            </div>
 
-            <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
-
-            </form>
+            <div id="transectionSec">
+               
+            </div>
 
 
 
         </section>
     </div>
 
-
     <script>
-        document.getElementById('wtdBtn').addEventListener("click", function (e) {
-
-            e.preventDefault()
-            const agentNumber = document.getElementById('agent-number').value
-            const wtdAmount = parseInt(document.getElementById('wtd-amount').value)
-            const wtdPin = parseInt(document.getElementById('pinWtd').value)
-
-            console.log(agentNumber, wtdAmount, wtdPin)
-            const availableBalance = parseInt(document.getElementById('balance').innerText);
-
-            // Check if balance is sufficient
-            if (availableBalance < wtdAmount) {
-                alert("❌ Insufficient balance. Please add money.");
-                return;
-            }
-
-            const totalAfterWithdraw = availableBalance - wtdAmount
-            document.getElementById('balance').innerText = totalAfterWithdraw
-
-
-        })
 
 
     </script>
+
 
     <script src="main.js"></script>
 </body>

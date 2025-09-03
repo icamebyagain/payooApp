@@ -1,5 +1,5 @@
 const validPin = 1234
-
+const transectionData = []
 // reuseable functions
 
 // input value 
@@ -30,15 +30,15 @@ function setBalance(value) {
 function toggle(id) {
     const forms = document.getElementsByClassName("form")
     for (let form of forms) {
-        form.style.display = "none"    
+        form.style.display = "none"
     }
     document.getElementById(id).style.display = "block"
 
 }
 
-function btnStyle (id){
+function btnStyle(id) {
     const cardButtons = document.getElementsByClassName('cardBtn')
-    for (let button of cardButtons){
+    for (let button of cardButtons) {
         button.classList.remove("activeCard")
     }
     document.getElementById(id).classList.add("activeCard")
@@ -46,7 +46,7 @@ function btnStyle (id){
 
 
 
-//  Add Money js 
+//  Add Money js //  Add Money js //  Add Money js //  Add Money js //  Add Money js //  Add Money js 
 
 
 document.getElementById('addMoneyBtn')
@@ -88,9 +88,86 @@ document.getElementById('addMoneyBtn')
         const availableBalance = getInnerText('balance');
         const newTotalAvailableBalance = availableBalance + addAmount;
         setBalance(newTotalAvailableBalance);
-
+        const data = {
+            name: "Add Money",
+            date: new Date().toLocaleString()
+        }
+        transectionData.push(data)
+        console.log(transectionData);
 
     })
+       // cash out js // cash out js // cash out js // cash out js // cash out js 
+
+document.getElementById('wtdBtn').addEventListener("click", function (e) {
+
+    e.preventDefault()
+    const agentNumber = document.getElementById('agent-number').value
+    const wtdAmount = parseInt(document.getElementById('wtd-amount').value)
+    const wtdPin = parseInt(document.getElementById('pinWtd').value)
+
+    console.log(agentNumber, wtdAmount, wtdPin)
+    const availableBalance = parseInt(document.getElementById('balance').innerText);
+
+    // Check if balance is sufficient
+    if (availableBalance < wtdAmount) {
+        alert("❌ Insufficient balance. Please add money.");
+        return;
+    }
+
+    const totalAfterWithdraw = availableBalance - wtdAmount
+    document.getElementById('balance').innerText = totalAfterWithdraw
+
+    const data = {
+         name: "Cash Out",
+         date: new Date().toLocaleString()
+    }
+    transectionData.push(data)
+
+})
+
+// transection history 
+
+document.getElementById('btn-Transactions').addEventListener("click", function(){
+
+        // console.log(transectionData)
+
+    const transactionSection = document.getElementById("transectionSec")
+    transactionSection.innerText =""
+
+    for (let data of transectionData){
+        const div = document.createElement("div")
+        div.innerHTML = `
+         <div class="max-w-md mx-auto bg-white rounded-xl p-6 mt-3">
+
+                    <div class="flex justify-between items-center">
+                        <div class="flex">
+
+                            <div class="p-3 rounded-full bg-[#eaecee]">
+                                <img src="assets/purse1.png" alt="">
+                            </div>
+
+                            <div class=" ml-4">
+                                <h2>${data.name}</h2>
+                                <p>${data.date}</p>
+                            </div>
+
+                        </div>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+
+                </div>
+        `
+            transactionSection.appendChild(div)
+
+    }
+
+})
+
+
+
+
+
+
 
 
 // toggoling 
