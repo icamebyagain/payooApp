@@ -110,7 +110,8 @@
 
     <!-- form section -->
 
-    <section id="form-addMoney" class="max-w-lg mx-auto">
+   <div class="forms">
+     <section id="form-addMoney" class="max-w-lg mx-auto form">
         <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Add Money</h1>
 
         <form action="" class="max-w-md mx-auto bg-white rounded-xl p-6">
@@ -181,7 +182,7 @@
     <!-- cash out form --><!-- cash out form --><!-- cash out form --><!-- cash out form -->
 
 
-    <section id="form-cashout" class="max-w-lg mx-auto hidden ">
+    <section id="form-cashout" class="max-w-lg mx-auto form hidden">
         <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Cash Out</h1>
 
         <form action="" class="max-w-md mx-auto bg-white rounded-xl p-6">
@@ -236,8 +237,101 @@
     </section>
 
 
+    <!-- Transfer form --><!-- Transfer form --><!-- Transfer form --><!-- Transfer form -->
+    <section id="form-transfer" class="max-w-lg mx-auto form hidden">
+        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Transfer Money</h1>
+
+        <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+
+            <div>
+                <!-- Agent number -->
+
+                <div class="mt-4">
+                    <label class="greyB " for="">Account Number</label> <br>
+
+                    <input id="" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                        placeholder="Enter 11 digit number" type="text">
+
+                </div>
+            </div>
 
 
+            <div>
+                <!-- Amount withdraw -->
+
+                <div class="mt-4">
+                    <label class="greyB" for="">Amount</label> <br>
+
+                    <input id="" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                        placeholder="Amount to withdraw" type="text">
+                    <p id="" class="text-red-500 text-sm mt-1 hidden">Please enter a valid positive number.
+                    </p>
+
+                </div>
+            </div>
+
+
+
+            <div>
+                <!-- Pin no -->
+
+                <div class="mt-4">
+                    <label class="greyB" for="">Enter 4 digit pin Number</label> <br>
+
+                    <input id="" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                        placeholder="Enter 4 digit pin number" type="text">
+                    <p id="" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 4-digit PIN number.
+                    </p>
+                </div>
+            </div>
+
+            <!-- button  -->
+            <button id="" class="mt-4 btn btn-active text-white rounded-2xl bg-[#0874F2] w-full ">Withdraw
+                Money</button>
+
+        </form>
+
+
+
+    </section>
+    
+    
+    <!-- Bonus form --><!-- Bonus form --><!-- Bonus form --><!-- Bonus form -->
+    <section id="form-bonus" class="max-w-lg mx-auto form hidden">
+        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Get Bonus </h1>
+
+        <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+
+        </form>
+
+
+
+    </section>
+
+    <!-- bill form --><!-- bill form --><!-- bill form -->
+    <section id="form-paybill" class="max-w-lg mx-auto form hidden">
+        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Pay Bill </h1>
+
+        <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+
+        </form>
+
+
+
+    </section>
+
+    <!-- Transection form --><!-- Transection form --><!-- Transection form -->
+    <section id="form-transection" class="max-w-lg mx-auto hidden form">
+        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Transections </h1>
+
+        <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+
+        </form>
+
+
+
+    </section>
+   </div>
 
 
     <script>
