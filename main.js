@@ -36,6 +36,15 @@ function toggle(id) {
 
 }
 
+function btnStyle (id){
+    const cardButtons = document.getElementsByClassName('cardBtn')
+    for (let button of cardButtons){
+        button.classList.remove("activeCard")
+    }
+    document.getElementById(id).classList.add("activeCard")
+}
+
+
 
 //  Add Money js 
 
@@ -86,32 +95,38 @@ document.getElementById('addMoneyBtn')
 
 // toggoling 
 
-// Toggle: Add Money Form
-document.getElementById("btn-add-money").addEventListener("click", function (e) {
+// Add Money
+document.getElementById("btn-add-money").addEventListener("click", function () {
     toggle("form-addMoney");
+    btnStyle("btn-add-money");
 });
 
-// Toggle: Cashout Form
-document.getElementById("btn-cashout").addEventListener("click", function (e) {
+// Cashout
+document.getElementById("btn-cashout").addEventListener("click", function () {
     toggle("form-cashout");
+    btnStyle("btn-cashout");
 });
 
-// Toggle: Transfer Money Form
-document.getElementById("btn-transfer").addEventListener("click", function (e) {
+// Transfer Money
+document.getElementById("btn-transfer").addEventListener("click", function () {
     toggle("form-transfer");
+    btnStyle("btn-transfer");
 });
 
-// Toggle: Bonus Form
-document.getElementById("btn-bonus").addEventListener("click", function (e) {
+// Get Bonus
+document.getElementById("btn-bonus").addEventListener("click", function () {
     toggle("form-bonus");
+    btnStyle("btn-bonus");
 });
 
-// Toggle: Pay Bills Form
-document.getElementById("btn-bills").addEventListener("click", function (e) {
+// Pay Bill
+document.getElementById("btn-bills").addEventListener("click", function () {
     toggle("form-paybill");
+    btnStyle("btn-bills");
 });
 
-// Toggle: Transactions Form
-document.getElementById("btn-Transactions").addEventListener("click", function (e) {
+// Transactions
+document.getElementById("btn-Transactions").addEventListener("click", function () {
     toggle("form-transection");
+    btnStyle("btn-Transactions");
 });

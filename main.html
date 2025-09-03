@@ -23,6 +23,19 @@
             color: #080808b3;
             font-weight: 600;
         }
+
+        .activeCard {
+            border: 2px solid #0874F2;
+            /* Blue border */
+            border-radius: 0.5rem;
+            background:rgba(135, 206, 250, 0.36);
+            /* Optional: match your card rounding */
+        }
+
+        .activeCard p {
+            font-weight: 700;
+            color: #0874F2;
+        }
     </style>
 
 
@@ -71,32 +84,32 @@
             <div class="grid grid-cols-3 gap-5 p-5">
 
 
-                <div id="btn-add-money" class="text-center p-3 border border-gray-300 rounded-md ">
+                <div id="btn-add-money" class="cardBtn  text-center p-3 border border-gray-300 rounded-md ">
                     <img class="mx-auto mb-3" src="assets/wallet1.png" alt="">
                     <p>Add Money</p>
                 </div>
 
-                <div id="btn-cashout" class="text-center p-3 border border-gray-300 rounded-md ">
+                <div id="btn-cashout" class="cardBtn  text-center p-3 border border-gray-300 rounded-md ">
                     <img class="mx-auto mb-3" src="assets/send1.png" alt="">
                     <p class="greyB">Cashout</p>
                 </div>
 
-                <div id="btn-transfer" class="text-center p-3 border border-gray-300 rounded-md ">
+                <div id="btn-transfer" class="cardBtn text-center p-3 border border-gray-300 rounded-md ">
                     <img class="mx-auto mb-3" src="assets/money1.png" alt="">
                     <p class="greyB">Transfer Money</p>
                 </div>
 
-                <div id="btn-bonus" class="text-center p-3 border border-gray-300 rounded-md ">
+                <div id="btn-bonus" class="cardBtn text-center p-3 border border-gray-300 rounded-md ">
                     <img class="mx-auto mb-3" src="assets/bonus1.png" alt="">
                     <p class="greyB">Get Bonus</p>
                 </div>
 
-                <div id="btn-bills" class="text-center p-3 border border-gray-300 rounded-md ">
+                <div id="btn-bills" class="cardBtn text-center p-3 border border-gray-300 rounded-md ">
                     <img class="mx-auto mb-3" src="assets/purse1.png" alt="">
                     <p class="greyB">Pay Bill</p>
                 </div>
 
-                <div id="btn-Transactions" class="text-center p-3 border border-gray-300 rounded-md ">
+                <div id="btn-Transactions" class="cardBtn text-center p-3 border border-gray-300 rounded-md ">
                     <img class="mx-auto mb-3" src="assets/transaction1.png" alt="">
                     <p class="greyB">Transactions</p>
                 </div>
@@ -110,228 +123,235 @@
 
     <!-- form section -->
 
-   <div class="forms">
-     <section id="form-addMoney" class="max-w-lg mx-auto form">
-        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Add Money</h1>
+    <div class="forms">
+        <section id="form-addMoney" class="max-w-lg mx-auto form">
+            <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Add Money</h1>
 
-        <form action="" class="max-w-md mx-auto bg-white rounded-xl p-6">
-            <div>
-                <!-- select bank -->
+            <form action="" class="max-w-md mx-auto bg-white rounded-xl p-6">
+                <div>
+                    <!-- select bank -->
 
-                <h2 class="greyB">Select A Bank </h2>
-                <select id="bank-name" class="select w-full h-[40px] border-gray-300 mt-2 bg-[#f4f5f7] rounded-2xl">
-                    <option disabled selected>Select Bank</option>
-                    <option>City</option>
-                    <option>Dutch Bangla</option>
-                    <option>HSBC</option>
-                </select>
-
-            </div>
-
-
-            <div>
-                <!-- Account number -->
-
-                <div class="mt-4">
-                    <label class="greyB " for="">Bank Account Number</label> <br>
-
-                    <input id="bankAccountNumber"
-                        class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
-                        placeholder="Enter 11 digit account number" type="text">
-                    <p id="accountError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid account number.
-                    </p>
-                </div>
-            </div>
-
-
-            <div>
-                <!-- Amount add -->
-
-                <div id="" class="mt-4">
-                    <label class="greyB" for="">Amount To Add</label> <br>
-
-                    <input id="add-amount" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
-                        placeholder="Add Amount to withdraw" type="text">
-                    <p id="amountError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid positive number.
-                    </p>
+                    <h2 class="greyB">Select A Bank </h2>
+                    <select id="bank-name" class="select w-full h-[40px] border-gray-300 mt-2 bg-[#f4f5f7] rounded-2xl">
+                        <option disabled selected>Select Bank</option>
+                        <option>City</option>
+                        <option>Dutch Bangla</option>
+                        <option>HSBC</option>
+                    </select>
 
                 </div>
-            </div>
 
 
+                <div>
+                    <!-- Account number -->
 
-            <div>
-                <!-- Pin no -->
+                    <div class="mt-4">
+                        <label class="greyB " for="">Bank Account Number</label> <br>
 
-                <div class="mt-4">
-                    <label class="greyB" for="">Enter 4 digit pin Number</label> <br>
-
-                    <input id="pin-addmoney" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
-                        placeholder="Enter 4 digit pin number" type="text">
-                    <p id="pinError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 4-digit PIN number.
-                    </p>
+                        <input id="bankAccountNumber"
+                            class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                            placeholder="Enter 11 digit account number" type="text">
+                        <p id="accountError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid account
+                            number.
+                        </p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- button  -->
-            <button id="addMoneyBtn" class="mt-4 btn btn-active text-white rounded-2xl bg-[#0874F2] w-full ">Add
-                Money</button>
-        </form>
-    </section>
-
-    <!-- cash out form --><!-- cash out form --><!-- cash out form --><!-- cash out form -->
 
 
-    <section id="form-cashout" class="max-w-lg mx-auto form hidden">
-        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Cash Out</h1>
+                <div>
+                    <!-- Amount add -->
 
-        <form action="" class="max-w-md mx-auto bg-white rounded-xl p-6">
+                    <div id="" class="mt-4">
+                        <label class="greyB" for="">Amount To Add</label> <br>
 
+                        <input id="add-amount" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                            placeholder="Add Amount to withdraw" type="text">
+                        <p id="amountError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid positive
+                            number.
+                        </p>
 
-            <div>
-                <!-- Agent number -->
-
-                <div class="mt-4">
-                    <label class="greyB " for="">Agent Number</label> <br>
-
-                    <input id="agent-number" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
-                        placeholder="Enter 11 digit number" type="text">
-
+                    </div>
                 </div>
-            </div>
 
 
-            <div>
-                <!-- Amount withdraw -->
 
-                <div class="mt-4">
-                    <label class="greyB" for="">Amount</label> <br>
+                <div>
+                    <!-- Pin no -->
 
-                    <input id="wtd-amount" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
-                        placeholder="Amount to withdraw" type="text">
-                    <p id="amountError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid positive number.
-                    </p>
+                    <div class="mt-4">
+                        <label class="greyB" for="">Enter 4 digit pin Number</label> <br>
 
+                        <input id="pin-addmoney"
+                            class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                            placeholder="Enter 4 digit pin number" type="text">
+                        <p id="pinError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 4-digit PIN
+                            number.
+                        </p>
+                    </div>
                 </div>
-            </div>
+
+                <!-- button  -->
+                <button id="addMoneyBtn" class="mt-4 btn btn-active text-white rounded-2xl bg-[#0874F2] w-full ">Add
+                    Money</button>
+            </form>
+        </section>
+
+        <!-- cash out form --><!-- cash out form --><!-- cash out form --><!-- cash out form -->
 
 
+        <section id="form-cashout" class="max-w-lg mx-auto form hidden">
+            <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Cash Out</h1>
 
-            <div>
-                <!-- Pin no -->
+            <form action="" class="max-w-md mx-auto bg-white rounded-xl p-6">
 
-                <div class="mt-4">
-                    <label class="greyB" for="">Enter 4 digit pin Number</label> <br>
 
-                    <input id="pinWtd" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
-                        placeholder="Enter 4 digit pin number" type="text">
-                    <p id="pinError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 4-digit PIN number.
-                    </p>
+                <div>
+                    <!-- Agent number -->
+
+                    <div class="mt-4">
+                        <label class="greyB " for="">Agent Number</label> <br>
+
+                        <input id="agent-number"
+                            class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                            placeholder="Enter 11 digit number" type="text">
+
+                    </div>
                 </div>
-            </div>
-
-            <!-- button  -->
-            <button id="wtdBtn" class="mt-4 btn btn-active text-white rounded-2xl bg-[#0874F2] w-full ">Withdraw
-                Money</button>
-        </form>
-    </section>
 
 
-    <!-- Transfer form --><!-- Transfer form --><!-- Transfer form --><!-- Transfer form -->
-    <section id="form-transfer" class="max-w-lg mx-auto form hidden">
-        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Transfer Money</h1>
+                <div>
+                    <!-- Amount withdraw -->
 
-        <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+                    <div class="mt-4">
+                        <label class="greyB" for="">Amount</label> <br>
 
-            <div>
-                <!-- Agent number -->
+                        <input id="wtd-amount" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                            placeholder="Amount to withdraw" type="text">
+                        <p id="amountError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid positive
+                            number.
+                        </p>
 
-                <div class="mt-4">
-                    <label class="greyB " for="">Account Number</label> <br>
-
-                    <input id="" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
-                        placeholder="Enter 11 digit number" type="text">
-
+                    </div>
                 </div>
-            </div>
 
 
-            <div>
-                <!-- Amount withdraw -->
 
-                <div class="mt-4">
-                    <label class="greyB" for="">Amount</label> <br>
+                <div>
+                    <!-- Pin no -->
 
-                    <input id="" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
-                        placeholder="Amount to withdraw" type="text">
-                    <p id="" class="text-red-500 text-sm mt-1 hidden">Please enter a valid positive number.
-                    </p>
+                    <div class="mt-4">
+                        <label class="greyB" for="">Enter 4 digit pin Number</label> <br>
 
+                        <input id="pinWtd" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                            placeholder="Enter 4 digit pin number" type="text">
+                        <p id="pinError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 4-digit PIN
+                            number.
+                        </p>
+                    </div>
                 </div>
-            </div>
+
+                <!-- button  -->
+                <button id="wtdBtn" class="mt-4 btn btn-active text-white rounded-2xl bg-[#0874F2] w-full ">Withdraw
+                    Money</button>
+            </form>
+        </section>
 
 
+        <!-- Transfer form --><!-- Transfer form --><!-- Transfer form --><!-- Transfer form -->
+        <section id="form-transfer" class="max-w-lg mx-auto form hidden">
+            <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Transfer Money</h1>
 
-            <div>
-                <!-- Pin no -->
+            <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
 
-                <div class="mt-4">
-                    <label class="greyB" for="">Enter 4 digit pin Number</label> <br>
+                <div>
+                    <!-- Agent number -->
 
-                    <input id="" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
-                        placeholder="Enter 4 digit pin number" type="text">
-                    <p id="" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 4-digit PIN number.
-                    </p>
+                    <div class="mt-4">
+                        <label class="greyB " for="">Account Number</label> <br>
+
+                        <input id="" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                            placeholder="Enter 11 digit number" type="text">
+
+                    </div>
                 </div>
-            </div>
-
-            <!-- button  -->
-            <button id="" class="mt-4 btn btn-active text-white rounded-2xl bg-[#0874F2] w-full ">Withdraw
-                Money</button>
-
-        </form>
 
 
+                <div>
+                    <!-- Amount withdraw -->
 
-    </section>
-    
-    
-    <!-- Bonus form --><!-- Bonus form --><!-- Bonus form --><!-- Bonus form -->
-    <section id="form-bonus" class="max-w-lg mx-auto form hidden">
-        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Get Bonus </h1>
+                    <div class="mt-4">
+                        <label class="greyB" for="">Amount</label> <br>
 
-        <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+                        <input id="" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                            placeholder="Amount to withdraw" type="text">
+                        <p id="" class="text-red-500 text-sm mt-1 hidden">Please enter a valid positive number.
+                        </p>
 
-        </form>
+                    </div>
+                </div>
 
 
 
-    </section>
+                <div>
+                    <!-- Pin no -->
 
-    <!-- bill form --><!-- bill form --><!-- bill form -->
-    <section id="form-paybill" class="max-w-lg mx-auto form hidden">
-        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Pay Bill </h1>
+                    <div class="mt-4">
+                        <label class="greyB" for="">Enter 4 digit pin Number</label> <br>
 
-        <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+                        <input id="" class="p-4 w-full h-[40px] mt-2 border-gray-300 bg-[#f4f5f7] rounded-2xl"
+                            placeholder="Enter 4 digit pin number" type="text">
+                        <p id="" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 4-digit PIN number.
+                        </p>
+                    </div>
+                </div>
 
-        </form>
+                <!-- button  -->
+                <button id="" class="mt-4 btn btn-active text-white rounded-2xl bg-[#0874F2] w-full ">Withdraw
+                    Money</button>
 
-
-
-    </section>
-
-    <!-- Transection form --><!-- Transection form --><!-- Transection form -->
-    <section id="form-transection" class="max-w-lg mx-auto hidden form">
-        <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Transections </h1>
-
-        <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
-
-        </form>
+            </form>
 
 
 
-    </section>
-   </div>
+        </section>
+
+
+        <!-- Bonus form --><!-- Bonus form --><!-- Bonus form --><!-- Bonus form -->
+        <section id="form-bonus" class="max-w-lg mx-auto form hidden">
+            <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Get Bonus </h1>
+
+            <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+
+            </form>
+
+
+
+        </section>
+
+        <!-- bill form --><!-- bill form --><!-- bill form -->
+        <section id="form-paybill" class="max-w-lg mx-auto form hidden">
+            <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Pay Bill </h1>
+
+            <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+
+            </form>
+
+
+
+        </section>
+
+        <!-- Transection form --><!-- Transection form --><!-- Transection form -->
+        <section id="form-transection" class="max-w-lg mx-auto hidden form">
+            <h1 class="text-[18px] font-bold pt-6 pb-4 ml-8">Transections </h1>
+
+            <form class="max-w-md mx-auto bg-white rounded-xl p-6" action=" ">
+
+            </form>
+
+
+
+        </section>
+    </div>
 
 
     <script>
